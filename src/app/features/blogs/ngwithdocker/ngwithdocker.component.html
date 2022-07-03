@@ -1,0 +1,351 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true"
+    style="background-image: url('./assets/img/docker_ang_card.jpg');">
+    <div class="filter"></div>
+  </div>
+  <div class=container>
+
+    <h1>Angular 9 with Docker Step by Step example</h1>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal>
+      I had the plan to learn docker and use an angular app running under the docker environment.
+      I was struggling to get the right and simple steps to start with.
+      So I invested almost 2 days to learn basic docker and working with angular 9 and
+      finally I was able to make it. Congrats to me!! 
+      <span style='font-family:"Segoe UI Emoji",sans-serif'>&#128522;</span>
+    </p>
+
+    <h1>Setting up the local environment and workspace</h1>
+
+    <p class=MsoNormal><span class=Heading1Char><span style='font-size:14.0pt;
+  line-height:107%'>Prerequisites</span></span><span style='font-size:10.0pt;
+  line-height:107%'>:</span></p>
+
+    <p class=MsoNormal>Following resource are required to run/complete this demo</p>
+
+    <p class=MsoNormal>Visual Studio Code: Download from here
+      <a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a>
+    </p>
+    <p class=MsoNormal>Docker Desktop: Download from here
+      <a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a>
+      (Window platform: 10 Professional is required)
+    </p>
+
+    <p class=MsoNormal>Node.Js: Download from here <a
+        href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+
+    <h1>Angular Project Setup : </h1>
+
+    <p class=MsoNormal>After installing above tools open you CMD/Angular CLI</p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal>Install Angular : If you are new to angular good visit
+      here learn and step <a href="https://angular.io/guide/setup-local">https://angular.io/guide/setup-local</a>.</p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal><b>Step 1:</b> Install the Angular CLI</p>
+
+    <p class=MsoNormal> <span class=pln><span style='font-size:9.5pt;
+  line-height:107%;font-family:"Courier New";color:#17FF0B;background:#444444'>npm
+          install </span></span><span class=pun><span style='font-size:9.5pt;line-height:
+  107%;font-family:"Courier New";color:#17FF0B;background:#444444'>-</span></span><span class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";
+  color:#17FF0B;background:#444444'>g </span></span><span class=lit><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;
+  background:#444444'>@angular</span></span><span class=pun><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;
+  background:#444444'>/</span></span><span class=pln><span style='font-size:9.5pt;
+  line-height:107%;font-family:"Courier New";color:#17FF0B;background:#444444'>cli</span></span></p>
+
+    <p class=MsoNormal><b>Step 2:</b> Create Hello World application</p>
+
+    <p class=MsoNormal style='text-indent:36.0pt'><span class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;
+  letter-spacing:.25pt;background:#444444'>ng new hello-world</span></span></p>
+
+    <p class=MsoNormal><b>Step 3:</b> Run the application</p>
+
+    <p class=MsoNormal style='text-indent:36.0pt'><span class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;
+  background:#444444'>cd my</span></span><span class=pun><span style='font-size:
+  9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;background:#444444'>-</span></span><span
+        class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";
+  color:#17FF0B;background:#444444'>app </span></span></p>
+
+    <p class=MsoNormal style='text-indent:36.0pt'><span class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;
+  background:#444444'>ng serve </span></span><span class=pun><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;
+  background:#444444'>--</span></span><span class=pln><span style='font-size:
+  9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;background:#444444'>open</span></span></p>
+
+    <p class=MsoNormal style='text-indent:36.0pt'> or Open your working
+      folder(hello-world) in vs code and run <span class=pln><span style='font-size:
+  9.5pt;line-height:107%;font-family:"Courier New";color:#17FF0B;background:#444444'>ng
+          serve </span></span><span class=pun><span style='font-size:9.5pt;line-height:
+  107%;font-family:"Courier New";color:#17FF0B;background:#444444'>--</span></span><span class=pln><span style='font-size:9.5pt;line-height:107%;font-family:"Courier New";
+  color:#17FF0B;background:#444444'>open</span></span></p>
+
+    <p class=MsoNormal>Great you are done with your angular project and your
+      application is running now you can verify visiting over <a
+        href="http://localhost:4200/">http://localhost:4200/</a>
+    </p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <h1>Docker Setup for your Hello-World Applications</h1>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal>What is Docker?</p>
+
+    <p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Docker is a set of platforms as a service products, </p>
+
+    <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Uses OS-level virtualization to deliver software in packages
+      called containers. </p>
+
+    <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Developed by: Docker, Inc. </p>
+
+    <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>and Written in: Go, </p>
+
+    <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Initial release date: 20 March 2013</p>
+
+    <p class=MsoNormal>What can I use Docker for?</p>
+
+    <p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Fast, consistent delivery of your applications</p>
+
+    <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Responsive deployment and scaling</p>
+
+    <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Running more workloads on the same hardware</p>
+
+    <p class=MsoNormal> you are new to Docker, then visiting the following docker
+      official website <a href="https://www.docker.com/">https://www.docker.com/</a>
+      to learn</p>
+
+    <h2>Visuals Studio Code Setup: </h2>
+
+    <p class=MsoNormal>Got VS Code &gt;&gt; Extensions &gt;&gt; Search “Docker”
+      &gt;&gt; install one from Microsoft only</p>
+
+    <p class=MsoNormal>Here is screen shot for the same:</p>
+
+    <p class=MsoNormal><img alt="Install Docker" border=0 width=auto height=213 id="Picture 1"
+        src="assets/img/blog/visual-studio-code-docker-extension.jpg" class="img-fluid"></p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal><b>Step 4:</b> under your project root directory create a
+      file named <b>DockerFile</b> (Without any Extensions), you can also create docker
+      file with help VS CODE <b>Command Palette...</b></p>
+
+    <p class=MsoNormal><b>Step 5:</b> paste the following code to your DockerFile:</p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>FROM</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#4EC9B0'>node</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>:13.3.0&nbsp;</span><span style='font-size:10.5pt;font-family:
+  Consolas;color:#C586C0'>AS</span><span style='font-size:10.5pt;font-family:
+  Consolas;color:#D4D4D4'>&nbsp;compile-image</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>WORKDIR</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>/opt/ng</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>COPY</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;&nbsp;</span><span style='font-size:10.5pt;font-family:
+  Consolas;color:#9CDCFE'>package.json</span><span style='font-size:10.5pt;
+  font-family:Consolas;color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;
+  font-family:Consolas;color:#9CDCFE'>./</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>RUN</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>npm</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>install</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>ENV</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>PATH</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>=</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#CE9178'>&quot;./node_modules/.bin:</span><span style='font-size:10.5pt;
+  font-family:Consolas;color:#9CDCFE'>$PATH</span><span style='font-size:10.5pt;
+  font-family:Consolas;color:#CE9178'>&quot;</span><span style='font-size:10.5pt;
+  font-family:Consolas;color:#D4D4D4'>&nbsp;</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>COPY</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>.</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>./</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>RUN</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>ng</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>build</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>--prod</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>FROM</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#4EC9B0'>nginx</span></p>
+
+    <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  14.25pt;background:#1E1E1E'><span style='font-size:10.5pt;font-family:Consolas;
+  color:#C586C0'>COPY</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>--from</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#D4D4D4'>=</span><span style='font-size:10.5pt;font-family:Consolas;
+  color:#9CDCFE'>compile-image</span><span style='font-size:10.5pt;font-family:
+  Consolas;color:#D4D4D4'>&nbsp;</span><span style='font-size:10.5pt;font-family:
+  Consolas;color:#9CDCFE'>/opt/ng/dist/hello-docker</span><span style='font-size:
+  10.5pt;font-family:Consolas;color:#D4D4D4'>&nbsp;</span><span style='font-size:
+  10.5pt;font-family:Consolas;color:#9CDCFE'>/usr/share/nginx/html</span></p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal><b>Note*:</b> If you are facing any issue related to nginx
+      Just install with following command</p>
+
+    <p class=MsoNormal style='text-indent:36.0pt'><span class=pln><span
+          style='font-size:9.5pt;line-height:107%;color:#17FF0B;background:#444444'>Npm
+          install nginx</span></span></p>
+
+    <h1>What is nginx?</h1>
+
+    <p class=MsoNormal>NGINX is open source software and provides a mechanism for
+      web serving, reverse proxying, caching, load balancing, media streaming etc. It
+      started out as a web server designed for maximum performance and stability. In
+      addition to its HTTP server capabilities, and load balancer for HTTP, TCP, and
+      UDP servers.</p>
+
+    <p class=MsoNormal><b>Step 6:</b> Build Image with VS Code</p>
+
+    <p class=MsoNormal> Open your docker file created in Step 5</p>
+
+    <p class=MsoNormal> Right Click(mouse) &gt;&gt; Build Image...</p>
+
+    <p class=MsoNormal> Select your latest project: &quot;hellodocker:latest&quot;
+    </p>
+
+    <p class=MsoNormal><b>Step 7:</b> RUN your image with following command in
+      terminal</p>
+
+    <p class=MsoNormal style='text-indent:36.0pt'> <span class=pln><span
+          style='font-size:9.5pt;line-height:107%;color:#17FF0B;background:#444444'>docker
+          run --rm -it -p 80:80/tcp hellodocker:latest</span></span></p>
+
+    <p class=MsoNormal> or</p>
+
+    <p class=MsoNormal> got to your image &gt;&gt; right click&gt;&gt;
+      RUN</p>
+
+    <p class=MsoNormal><img alt="run angular app with docker" border=0 width=auto height=270 id="Picture 2"
+        src="assets/img/blog/docker-run-vscode.jpg" class="img-fluid"></p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal>You have done with your first docker app, by default it is
+      running on port:80, <a href="http://localhost/">http://localhost/</a></p>
+
+    <p class=MsoNormal>Finally, here we go with angular running app</p>
+
+    <p class=MsoNormal><img alt="angular 9 app running on docker " border=0 width=auto height=303 id="Picture 3"
+        src="assets/img/blog/localhost-home.jpg" class="img-fluid" /></p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <h1>Push to Docker Hub</h1>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal>As you know docker runs on images(can be called out stopped
+      Containers), you push your hello-world image to docker hub for your future use
+      or next level learning.</p>
+
+    <p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Go to <a href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+
+    <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Create your account</p>
+
+    <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Note down your docker ID that will be used to push your images</p>
+
+    <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>To push your hello-world image </p>
+
+    <p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>Open vs code &gt;&gt; right click on image&gt;&gt;push</p>
+
+    <p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt'><span style='font-family:Symbol'>·<span
+          style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span></span>It will ask for docker ID and password first provide it</p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal><img alt="docker image push to docker hub" border=0 width=auto height=170 id="Picture 4"
+        src="assets/img/blog/docker-hub.jpg" class="img-fluid"></p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+    <p class=MsoNormal>And all done <span style='font-family:"Segoe UI Emoji",sans-serif'>&#128522;</span></p>
+
+    <p class=MsoNormal>&nbsp;</p>
+
+  </div>
+</div>

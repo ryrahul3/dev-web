@@ -1,0 +1,14 @@
+h3 {
+    background-image: linear-gradient(to left, blue, blue, red, blue, red);
+    -webkit-background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .display-5 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    line-height: 1;
+}

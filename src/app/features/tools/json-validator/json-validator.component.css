@@ -1,0 +1,43 @@
+.mt-0 {
+    margin-top:10 !important;
+  }
+  #input .buttons.is-vertical {
+    position: absolute;
+    bottom: 3px;
+    right: 20px;
+}
+.buttons.is-vertical:last-child {
+  margin-bottom: 0;
+}
+.buttons.is-vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#input textarea {
+  resize: vertical;
+  height: 316px;
+  min-height: 316px;
+  overflow-y: scroll;
+}
+.textarea.is-code {
+  font-family: Roboto Mono,Consolas,Courier New,monospace;
+  font-size: .9rem;
+  line-height: 1.45;
+  text-shadow: 0.015em 0.015em 0 #666;
+  color: #666;
+  padding: calc(.75rem - 1px);
+}
+.textarea {
+  display: block;
+  max-width: 100%;
+  min-width: 100%;
+  padding: calc(.75em - 1px);
+  resize: vertical;
+}

@@ -1,0 +1,125 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true"
+    style="background-image: url('./assets/img/time_convertor.jpeg');">
+    <div class="filter"></div>
+  </div>
+  <div class="container">
+    <div class="w3-col l10 m12">
+      <h2>Time Zone Converter</h2>
+      <div class="panel panel-default">
+        <div class="panel-body row">
+          <div class="col-md-12">
+            <div class="card text-center">
+              <div class="card-header">
+                World Clock/World Time Live
+              </div>
+              <div class="card-body row">
+                <ng-container *ngFor="let item of defaultClocks">
+                  <div class="col-md-4">
+                    <h5 style="text-transform: capitalize;">{{item.name}}</h5>
+                    <div class="mt-4 mb-3">
+                      <app-clock [TimeZoneName]="item.timezoneName"></app-clock>
+                    </div>
+                    <span class="text-warning">{{item.timezoneName.split("/")[1].replace("_"," ")}}</span>
+                  </div>
+                </ng-container>
+              </div>
+              <div class="card-footer text-muted">
+                {{defaultClocks[0].time.toDateString() }}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card text-center mt-3">
+              <div class="card-header bg-success">
+                <h4 class="text-white">Convert Time Between Countries/Cities in Different Time Zones:</h4>
+              </div>
+              <div class="card-body">
+                <div class="d-inline-block bg-warning" [style.visibility]="showWarning ? 'visible' : 'hidden'">
+                  Only Five Time zone conversion allowed!
+                </div>
+                <div class="row">
+                  <div class="input-group col-12">
+                    <input [(ngModel)]="selected" [ngbTypeahead]="search" [inputFormatter]="formatter"
+                      [resultFormatter]="formatter" [editable]='false' (selectItem)="onSelect($event)"
+                      class="form-control" class="form-control py-2 border-right-0 border" type="search" value="search"
+                      id="example-search-input">
+                    <span class="input-group-append">
+                      <div class="input-group-text bg-transparent"><i class="fa fa-clock-o"></i></div>
+                    </span>
+                  </div>
+                  <ng-template #customItemTemplate let-model="item">
+                    <span><strong>{{model.name}}</strong> {{model?.timezoneName}} utcOffset: {{model?.utcOffset}}</span>
+                  </ng-template>
+                </div>
+                <div class="row">
+                  <div class="col mt-2">
+                    <div class="btn btn-warning float-right" (click)="screenshot()"
+                      [hidden]="!(selectedTimeZones?.length??0 > 0)">
+                      <i class="fa fa-camera-retro fa-lg"></i> Take Screenshot
+                    </div>
+                  </div>
+                </div>
+                <div id="screen" #screen>
+                  <div *ngFor="let item of selectedTimeZones; let i=index" class="card mt-3"
+                    [ngClass]="{'bg-light': i%2==0}">
+                    <div class="card-body row ">
+                      <div class="col-xl-2 col-md-2 col-sm-2 col-lg-2 col-12">{{item.name}}</div>
+                      <div class="col-xl-3 col-md-3 col-sm-3 col-lg-3 col-12">
+                        {{item.timezoneName.split("/")[1].replace("_"," ")}}
+                        UTC:{{item.utcOffset}}</div>
+                      <div class="col-xl-3 col-md-3 col-sm-3 col-lg-3 col-12 input-group justify-content-center">
+                        <input type="time" height="35px" [(ngModel)]="item.convertedTime" formtarget="HH:mm" />
+                        <a (click)="changeTimeZone(item)"
+                          tooltip="Change time and click on this button to convert time.">
+                          <i class="fa fa-pencil fa-fw fa-lg"></i></a>
+                      </div>
+                      <div class="col-xl-3 col-md-3 col-sm-3 col-lg-3  col-12 mt-3">
+                        <app-clock [TimeZoneName]="item.timezoneName"></app-clock>
+                      </div>
+                      <div class="col-xl-1 col-md-1 col-sm-1 col-lg-1 col-12 justify-content-center"><a
+                          (click)="removeCountry(item)">
+                          <i class="fa fa-trash-o fa-lg"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="download" style="display:none;">
+              <img id="imgscreenshot" #canvas>
+              <a id="imgdownload" #downloadLink></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row col-12 mt-3">
+        <ul>
+          <li>
+            Online Time Zone is showing the live time of the local time zone, India, New York/USA, and London/UK.
+          </li>
+          <li>Easy to use time zone converter/time converter to see pacific time, central time, eastern time,
+            england time, abu dhabi time and also world time/world clock</li>
+          <li>You can take a screenshot of converted time zones and share with your friends and colleagues.</li>
+          <li>
+            <h6>Online Time Zone Converter Tool:</h6>
+            <ul>
+              <li>Facilitate time converter among zone conversions taking into account Daylight Saving Time (DST), local
+                time
+                zone, and present date and time.
+              </li>
+              <li>Find the time difference between several cities with the Time Difference Calculator.
+              </li>
+              <li>When the time in New York is 10:00 AM, what is the time in UK/London?
+              </li>
+              <li>
+                When the time in New Delhi/India is 9 am, what is the time in Australia and China?
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="w3-col l2 m12"></div>
+  </div>
+</div>

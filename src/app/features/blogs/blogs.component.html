@@ -1,0 +1,42 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true"
+      style="background-image: url('./assets/img/air-polution.jpg');">
+      <div class="filter"></div>
+  </div>
+  <div class="section profile-content">
+      <div class="container">
+          <div class="owner">
+              <div class="name">
+                  <h4 class="title">Blogs<br /></h4>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6 ml-auto mr-auto text-center">
+                  <p>Blogs and more professional knowledge sharing.</p>
+                  <br />
+              </div>
+          </div>
+          <br />
+
+      </div>
+      <div class="section section-dark">
+          <div class="container">
+              <div class="row example-page">
+                  <div class="col-md-6 text-center" routerLinkActive="active">
+                      <a [routerLink]="['/ng-docker']">
+                          <img src="./assets/img/docker_ang_card.jpg" alt="Rounded Image"
+                              class="img-rounded img-responsive" style="width: 100%">
+                          <a [routerLink]="['/ng-docker']" class="btn btn-outline-neutral btn-round">Angular 9 with Docker Step by Step example</a>
+                      </a>
+                  </div>
+                  <div class="col-md-6 text-center" routerLinkActive="active">
+                    <a [routerLink]="['/air-index']">
+                        <img src="./assets/img/air-polution-3.jpeg" alt="Rounded Image"
+                            class="img-rounded img-responsive" style="width: 100%">
+                        <a [routerLink]="['/air-index']" class="btn btn-outline-neutral btn-round">Indoor Air Pollution</a>
+                    </a>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>

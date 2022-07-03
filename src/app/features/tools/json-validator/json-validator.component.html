@@ -1,0 +1,66 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true"
+    style="background-image: url('./assets/img/json.jpeg');">
+    <div class="filter"></div>
+  </div>
+  <div class="container">
+    <div class="w3-col l10 m12">
+      <h2>Online JSON Formatter, Json Validator & JSON Viewer</h2>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-12 col-xl-6 col-md-6 col-sm-6 col-lg-6 text-info">
+              <small># It removes duplicate objects from JSON String & Data automatically.</small>
+            </div>
+            <div class="col-12 col-xl-6 col-md-6 col-sm-6 col-lg-6">
+              <a (click)="copyToCB()" class="float-right mt-1 ml-3"><i class="fa fa-copy fa-2x "></i></a>
+              <a (click)="reset()" class="float-right mt-1 ml-1"><i class="fa fa-refresh fa-2x "></i> </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 form-group">
+              <textarea name="jsonText" #txtJsonData rows="10" class="form-control mt-2" [(ngModel)]="code"
+                onfocus="this.select();" data-gramm_editor="false" spellcheck="false" placeholder="{}"></textarea>
+            </div>
+            <!-- <div class="col-xl-6 col-md-6 col-sm-6 col-lg-6 col-12 mt-2">
+              <div class="card">
+                <div class="card-body" style="max-height:254px; overflow-y: auto; min-height: 254px;">
+                  <ngx-json-viewer [json]="jsonText" [expanded]="true"></ngx-json-viewer> 
+                </div>
+              </div>
+            </div>-->
+          </div>
+
+          <div class="col-12" class="alert alert-success" *ngIf="successMessage">
+            <strong>Success:</strong> {{successMessage}}.
+          </div>
+          <div class="col-12 mt-3" class="alert alert-danger" *ngIf="errorText">
+            <strong>Error:</strong>
+            <pre>{{errorText}}</pre>.
+          </div>
+
+          <h6>Commons JSON Data's Errors:</h6>
+          <div class="row">
+            <ul class="">
+              <li>
+                Missing 'STRING' - You probably have an extra comma at the end of your collection. Something like &#126;
+                "a":
+                "b", &#125;
+              </li>
+              <li>
+                Missing 'STRING', 'NUMBER', 'NULL', 'TRUE', 'FALSE', '[', '&#123;' - You probably have an extra comma
+                at the end
+                of your list. example: ["a", "b", ]
+              </li>
+              <li>
+                Enclosing your collection keys in quotes. example: &#123; "key": "value" &#125;
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l2 m12"></div>
+  </div>
+</div>

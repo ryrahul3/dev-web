@@ -1,0 +1,62 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true"
+      style="background-image: url('./assets/img/calculator-2-1.jpeg');">
+      <div class="filter"></div>
+  </div>
+  <div class="section profile-content">
+      <div class="container">
+          <div class="owner">
+
+              <div class="name">
+                  <h4 class="title">Tools<br /></h4>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-6 ml-auto mr-auto text-center">
+                  <p>Current Time (World Clock) and online Days Calculator, use the Time and Date Converter, Online JSON Validator, Online GUID Generator. </p>
+                  <br />
+              </div>
+          </div>
+          <br />
+
+      </div>
+      <div class="section section-dark">
+          <div class="container">
+              <div class="row example-page">
+                  <div class="col-md-6 text-center" routerLinkActive="active">
+                      <a [routerLink]="['/days']">
+                          <img src="./assets/img/days_calculator.jpeg" alt="Rounded Image"
+                              class="img-rounded img-responsive" style="width: 100%">
+                          <a [routerLink]="['/days']" class="btn btn-outline-neutral btn-round">Days Calculator | Date of birth calculation</a>
+                      </a>
+                  </div>
+
+                  <div class="col-md-6 text-center" routerLinkActive="active">
+                      <a [routerLink]="['/guid']">
+                          <img src="./assets/img/guid_genrator.jpeg" alt="Rounded Image"
+                              class="img-rounded img-responsive" style="width: 100%">
+                          <a [routerLink]="['/guid']" class="btn btn-outline-neutral btn-round">UUID Genrator</a>
+                      </a>
+                  </div>
+                  <div class="row example-page">
+                      <div class="col-md-6 text-center" routerLinkActive="active">
+                          <a [routerLink]="['/json']">
+                              <img src="./assets/img/json.jpeg" alt="Rounded Image"
+                                  class="img-rounded img-responsive" style="width: 100%">
+                              <a [routerLink]="['/json']" class="btn btn-outline-neutral btn-round">Json Validator | Viewer | Beautifier
+                                  </a>
+                          </a>
+                      </div>
+
+                      <div class="col-md-6 text-center" routerLinkActive="active">
+                          <a [routerLink]="['/clock']">
+                              <img src="./assets/img/time_convertor.jpeg" alt="Rounded Image"
+                                  class="img-rounded img-responsive" style="width: 100%">
+                              <a [routerLink]="['/clock']" class="btn btn-outline-neutral btn-round">World Clock | Time Zone Converter</a>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>

@@ -1,0 +1,82 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true"
+    style="background-image: url('./assets/img/days_calculator.jpeg');">
+    <div class="filter"></div>
+  </div>
+  <div class="container">
+    <div class="w3-col card l10 m12">
+      <div class="ml-4">
+        <h2>Days Calculator Online</h2>
+
+        <p>How many days, months, and years are there between two dates?<span style="color:white"> date of birth
+            calculation| birth days calculator |day counter|calculate date</span></p>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-body row">
+          <div class="col-md-12">
+            <div class="card-body">
+              <div *ngIf="showWarning" class="d-inline-block bg-warning">
+                Wrong Dates!!
+              </div>
+              <div class="row">
+                <div class="input-group col-xl-6 col-md-6 col-sm-6 col-lg-6 col-12 my-1">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Start Date</span>
+                  </div>
+                  <!-- <input type="text" id="birthDate"> -->
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="firstdate" ngbDatepicker #d="ngbDatepicker">
+                  <!-- <ngb-datepicker #dp [(ngModel)]="birthDate" (navigate)="date = $event.next"></ngb-datepicker> -->
+                  <span class="input-group-append">
+                    <button class="input-group-text  bg-transparent" (click)="d.toggle()"><i class="fa fa-calendar"
+                        aria-hidden="true"></i></button>
+                  </span>
+                </div>
+                <div class="input-group col-xl-6 col-md-6 col-sm-6 col-lg-6 col-12 my-1">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">End Date</span>
+                  </div>
+                  <!-- <input type="text" id="today" [(ngModel)]="today"> -->
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="lastdate" ngbDatepicker #t="ngbDatepicker">
+                  <span class="input-group-append">
+                    <button class="input-group-text bg-transparent" (click)="t.toggle()"><i class="fa fa-calendar"
+                        aria-hidden="true"></i></button>
+                  </span>
+                </div>
+                <div class="col-12 my-1 justify-content-end">
+                  <div class="btn btn-warning float-right" (click)="caluclateDiffernce()">
+                    <i class="fa fa-calculator fa-lg"></i> Calculate Difference
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-3 shadow-sm p-3 bg-light  rounded">
+                <h3 class="text-center">{{ageDiff.years}} Years {{ageDiff.months}} Months and {{ageDiff.days}} Days</h3>
+                <div class="row">
+                  <div class="col-6 border-right">
+                    <ul>
+                      <li> {{ageDiff.years * 12 + ageDiff.months |number}} months.</li>
+                      <li>
+                        <b> {{totalDays.toFixed(0) |number}} Days.</b>
+                      </li>
+                      <li> {{diffInSeconds.toFixed(0)|number}} seconds.</li>
+                    </ul>
+                  </div>
+                  <div class="col-6">
+                    <ul>
+                      <li> {{(diffInSeconds / 360).toFixed(0)|number}} hours.</li>
+                      <li> {{(diffInSeconds / 60).toFixed(0) |number}} minutes.</li>
+                      <li> {{(diffInSeconds * 60).toFixed(0) |number}} milliseconds.</li>
+
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l2 m12"></div>
+  </div>
+</div>
