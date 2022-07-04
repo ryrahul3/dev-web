@@ -8,6 +8,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { FeaturesModule } from './features/features.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FeaturesModule } from './features/features.module';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    FeaturesModule
+    FeaturesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
