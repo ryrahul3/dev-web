@@ -1,11 +1,78 @@
-<div class="page-header" data-parallax="true" style="background-image: url('./assets/img/daniel-olahh.jpg');">
-    <div class="filter"></div>
+<div
+  class="page-header"
+  data-parallax="true"
+  style="background-image: url('./assets/img/daniel-olahh.jpg')"
+>
+  <div class="filter"></div>
+  <div class="container">
+    <div class="motto text-center">
+      <h1>Free ka Gyan Online</h1>
+      <h3>Hope for a bright future, stay safe, and live life....</h3>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="section text-center">
     <div class="container">
-        <div class="motto text-center">
-            <h1>Free ka Gyan Online</h1>
-            <h3>Hope for a bright future, stay safe, and live life....</h3>
-            <br />
-            <form (ngSubmit)="openWhatsApp()" #heroForm="ngForm">
+      <div class="row">
+        <div class="col-md-10 mx-auto my-auto">
+          <h2 class="title">Let's talk product</h2>
+          <h5 class="description">
+            Current Time (World Clock) and online Days Calculator, use the Time
+            and Date Converter, Online JSON Validator, Online GUID Generator,
+            blogs and more professional knowledge sharing.
+          </h5>
+          <br />
+          <!-- <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a> -->
+        </div>
+      </div>
+      <br /><br />
+      <div class="row">
+        <div class="col-md-3 mx-auto my-auto">
+          <div class="info">
+            <div class="icon icon-danger">
+              <i class="nc-icon nc-bulb-63"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title">Tools</h4>
+              <p>
+                Time Converter and World Clock - Days Calculator, Online JSON
+                Validator and Online GUID Generator to simplify your daily life.
+              </p>
+              <a [routerLink]="['/tools']" class="btn btn-link btn-danger"
+                >See more</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mx-auto my-auto">
+          <div class="info">
+            <div class="icon icon-danger">
+              <i class="nc-icon nc-sun-fog-29"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title">Blogs</h4>
+              <p>Blogs and more professional knowledge sharing.</p>
+              <a
+                [routerLink]="['/blogs']"
+                routerLinkActive="router-link-active"
+                class="btn btn-link btn-danger"
+                >See more</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mx-auto my-auto">
+          <div class="info">
+            <div class="icon icon-danger">
+              <i class="nc-icon nc-send"></i>
+            </div>
+            <div class="description">
+              <h4 class="info-title">WhatsApp </h4>
+              <p>
+                Open any WhatsApp Number without saving in phone
+              </p>
+              <form (ngSubmit)="openWhatsApp()" #heroForm="ngForm">
                 <div class="col-12">
                     <div class="form-group">
                         <input type="text" id="mobileNumber" name="mobileNumber" class="form-control"
@@ -13,162 +80,98 @@
                             #mobileNumber1="ngModel" pattern="[6789][0-9]{9}" required>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-outline-neutral btn-round" [disabled]="!heroForm.form.valid">Open Whatsapp</button>
+                <button type="submit" class="btn btn-link btn-danger" [disabled]="!heroForm.form.valid">Open Whatsapp</button>
             </form>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<div class="main">
-    <div class="section text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mr-auto ml-auto">
-                    <h2 class="title">Let's talk product</h2>
-                    <h5 class="description">Current Time (World Clock) and online Days Calculator, use the Time and Date
-                        Converter, Online JSON Validator, Online GUID Generator, blogs and more professional knowledge
-                        sharing.</h5>
-                    <br>
-                    <!-- <a href="#paper-kit" class="btn btn-danger btn-round">See Details</a> -->
-                </div>
-            </div>
-            <br /><br />
-            <div class="row">
-                <div class="col-md-3 mr-auto ml-auto">
-                    <div class="info">
-                        <div class="icon icon-danger">
-                            <i class="nc-icon nc-bulb-63"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Tools</h4>
-                            <p>Time Converter and World Clock - Days Calculator, Online JSON Validator and Online GUID
-                                Generator to simplify
-                                your daily life.</p>
-                            <a [routerLink]="['/tools']" class="btn btn-link btn-danger">See more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 mr-auto ml-auto">
-                    <div class="info">
-                        <div class="icon icon-danger">
-                            <i class="nc-icon nc-sun-fog-29"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Blogs</h4>
-                            <p>Blogs and more professional knowledge sharing.</p>
-                            <a [routerLink]="['/blogs']" routerLinkActive="router-link-active"
-                                class="btn btn-link btn-danger">See more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </div>
 
+  <div class="section section-dark text-center">
+    <div class="container">
+      <h2 class="title">Let's talk about us</h2>
+      <div class="row">
+        <div class="col-md-4 mx-auto my-auto">
+          <div class="card card-profile card-plain">
+            <div class="card-avatar">
+              <a href="#avatar"
+                ><img src="./assets/img/faces/surya.jpeg" alt="..."
+              /></a>
+            </div>
+            <div class="card-block">
+              <a href="#paper-kit">
+                <div class="author">
+                  <h4 class="card-title">Surya Prakash Singh</h4>
+                  <h6 class="card-category">Cloud Architect</h6>
+                </div>
+              </a>
+              <p class="card-description text-center">
+                He have proficiency in Azure Cloud Solution, DevOps OOPS, SOLID,
+                HTML5, CSS 3, and JavaScript, ASP.NET MVC 4+, WCF, Web API,
+                Entity Framework, Bootstrap, AngularJS, JQuery, C#, WPF 4,
+                Silverlight 4, VB.NET, ASP.NET, SQL Server, AJAX, programming
+                skills and .Net Framework and tools TFS, VSTS, VSO, Continuous
+                Integration (CI) and Continuous Delivery (CD) and Automation for
+                proactive monitoring & alerting.
+              </p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <!-- <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a> -->
+              <a
+                href="https://www.linkedin.com/in/suryaprakashsingh83/"
+                class="btn btn-link btn-just-icon btn-neutral"
+                target="_blank"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
         </div>
+
+        <div class="col-md-4 mx-auto my-auto">
+          <div class="card card-profile card-plain">
+            <div class="card-avatar">
+              <a href="#avatar"
+                ><img src="./assets/img/faces/rahul.jpeg" alt="..."
+              /></a>
+            </div>
+            <div class="card-block">
+              <a href="#paper-kit">
+                <div class="author">
+                  <h4 class="card-title">Rahul Yadav</h4>
+                  <h6 class="card-category">Specialist Programmer</h6>
+                </div>
+              </a>
+              <p class="card-description text-center">
+                Software Developer having 3+ years of experience in .NET
+                development with hands-on experience in Web application, and
+                REST API. Well verse with Angular 2+, .NET core, C#, HTML5,
+                CSS3.0 and Typescript. Familiar with .NET Framework, JavaScript,
+                SQL, and node.js.
+              </p>
+            </div>
+            <div class="card-footer text-center">
+              <a
+                href="https://twitter.com/rycoolrahul5"
+                class="btn btn-link btn-just-icon btn-neutral"
+                target="_blank"
+                ><i class="fa fa-twitter"></i
+              ></a>
+              <!-- <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a> -->
+              <a
+                href="https://www.linkedin.com/in/ryrahulyadav/"
+                class="btn btn-link btn-just-icon btn-neutral"
+                target="_blank"
+                ><i class="fa fa-linkedin"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="section section-dark text-center">
-        <div class="container">
-            <h2 class="title">Let's talk about us</h2>
-            <div class="row">
-                <div class="col-md-4 mr-auto ml-auto">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="#avatar"><img src="./assets/img/faces/surya.jpeg" alt="..."></a>
-                        </div>
-                        <div class="card-block">
-                            <a href="#paper-kit">
-                                <div class="author">
-                                    <h4 class="card-title">Surya Prakash Singh</h4>
-                                    <h6 class="card-category">Cloud Architect</h6>
-                                </div>
-                            </a>
-                            <p class="card-description text-center">
-                                He have proficiency in Azure Cloud Solution, DevOps OOPS, SOLID, HTML5, CSS 3, and
-                                JavaScript, ASP.NET MVC 4+, WCF, Web API, Entity Framework, Bootstrap, AngularJS,
-                                JQuery, C#, WPF 4, Silverlight 4, VB.NET, ASP.NET, SQL Server, AJAX, programming skills
-                                and .Net Framework and tools TFS, VSTS, VSO, Continuous Integration (CI) and Continuous
-                                Delivery (CD) and Automation for proactive monitoring & alerting.
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i
-                                    class="fa fa-twitter"></i></a>
-                            <!-- <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a> -->
-                            <a href="https://www.linkedin.com/in/suryaprakashsingh83/"
-                                class="btn btn-link btn-just-icon btn-neutral" target="_blank"><i
-                                    class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mr-auto ml-auto">
-                    <div class="card card-profile card-plain">
-                        <div class="card-avatar">
-                            <a href="#avatar"><img src="./assets/img/faces/rahul.jpeg" alt="..."></a>
-                        </div>
-                        <div class="card-block">
-                            <a href="#paper-kit">
-                                <div class="author">
-                                    <h4 class="card-title">Rahul Yadav</h4>
-                                    <h6 class="card-category">Specialist Programmer</h6>
-                                </div>
-                            </a>
-                            <p class="card-description text-center">
-                                Software Developer having 3+ years of experience in .NET development with hands-on
-                                experience in Web application, and REST API. Well verse with Angular 2+, .NET core, C#,
-                                HTML5, CSS3.0 and Typescript. Familiar with .NET Framework, JavaScript, SQL, and
-                                node.js.
-                            </p>
-                        </div>
-                        <div class="card-footer text-center">
-                            <a href="https://twitter.com/rycoolrahul5" class="btn btn-link btn-just-icon btn-neutral"
-                                target="_blank"><i class="fa fa-twitter"></i></a>
-                            <!-- <a href="#pablo" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-google-plus"></i></a> -->
-                            <a href="https://www.linkedin.com/in/ryrahulyadav/"
-                                class="btn btn-link btn-just-icon btn-neutral" target="_blank"><i
-                                    class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- <div class="section landing-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mr-auto ml-auto">
-                    <h2 class="text-center">Keep in touch?</h2>
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Name</label>
-                                <div class="input-group" [ngClass]="{'input-group-focus':focus===true}">
-                                    <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Name" (focus)="focus=true" (blur)="focus=false" >
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Email</label>
-                                <div class="input-group" [ngClass]="{'input-group-focus':focus1===true}">
-                                    <div class="input-group-prepend">
-                                      <span class="input-group-text">  <i class="nc-icon nc-email-85"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Email" (focus)="focus1=true" (blur)="focus1=false" >
-                                </div>
-                            </div>
-                        </div>
-                        <label>Message</label>
-                        <textarea class="form-control" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
-                        <div class="row">
-                            <div class="col-md-4 mr-auto ml-auto">
-                                <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> -->
+  </div>
 </div>
